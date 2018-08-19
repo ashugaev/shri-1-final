@@ -43,7 +43,7 @@ export function getDetailsContentLayout(ymaps) {
         }
       },
 
-      clear: () => {
+      clear () {
         if (this.connectionChart) {
           this.connectionChart.destroy();
         }
