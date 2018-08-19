@@ -33,12 +33,12 @@ export function initMap(ymaps, containerId) {
 
     objectManager.objects.balloon.open(objectId);
 
-    if (!obj.properties.details) {
-      loadDetails(objectId).then(data => {
-        obj.properties.details = data;
-        objectManager.objects.balloon.setData(obj);
-      });
-    }
+    // if (!obj.properties.details) {
+      // loadDetails(objectId).then(data => {
+      //   obj.properties.details = data;
+      //   objectManager.objects.balloon.setData(obj);
+      // });
+    // }
   });
 
   // filters

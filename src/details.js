@@ -27,7 +27,7 @@ export function getDetailsContentLayout(ymaps) {
         {% endif %}
     `,
     {
-      build: () => {
+      build() {
         BalloonContentLayout.superclass.build.call(this);
 
         const { details } = this.getData().object.properties;
