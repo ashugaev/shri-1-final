@@ -25,8 +25,7 @@ export function getDetailsContentLayout(ymaps) {
                 Идет загрузка данных...
             </div>
         {% endif %}
-    `,
-    {
+    `, {
       build() {
         BalloonContentLayout.superclass.build.call(this);
 
@@ -43,7 +42,7 @@ export function getDetailsContentLayout(ymaps) {
         }
       },
 
-      clear () {
+      clear() {
         if (this.connectionChart) {
           this.connectionChart.destroy();
         }

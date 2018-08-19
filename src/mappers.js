@@ -1,16 +1,16 @@
 export function mapServerData(serverData) {
   return {
-    type: "FeatureCollection",
+    type: 'FeatureCollection',
     features: serverData.map((obj, index) => ({
       id: index,
-      type: "Feature",
+      type: 'Feature',
       isActive: obj.isActive,
       geometry: {
-        type: "Point",
+        type: 'Point',
         coordinates: [obj.lat, obj.long]
       },
       properties: {
-        iconCaption: obj.serialNumber,
+        iconCaption: obj.serialNumber
       },
       options: {
         iconLayout: 'default#image',
@@ -25,13 +25,13 @@ export function mapServerData(serverData) {
 }
 
 function getColor(obj) {
-  return obj.isActive ?
-    '#1E98FF' :
-    '#ED4543';
+  return obj.isActive 
+    ? '#1E98FF' 
+    : '#ED4543';
 }
 
 function getIconHref(obj) {
-  return obj.isActive ?
-    'https://res.cloudinary.com/dpjuglsyv/image/upload/v1534681338/active-station-icon.svg' :
-    'https://res.cloudinary.com/dpjuglsyv/image/upload/v1534681337/break-station-icon.svg';
+  return obj.isActive 
+    ? 'https://res.cloudinary.com/dpjuglsyv/image/upload/v1534681338/active-station-icon.svg' 
+    : 'https://res.cloudinary.com/dpjuglsyv/image/upload/v1534681337/break-station-icon.svg';
 }

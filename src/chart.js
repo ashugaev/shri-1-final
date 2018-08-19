@@ -1,9 +1,9 @@
 import { Chart } from 'chart.js';
 
 function getColor(isActive, alpha = 1) {
-  return isActive
-    ? `rgba(54, 162, 235, ${alpha})`
-    : `rgba(255, 99, 132, ${alpha})`;
+  return isActive ?
+    `rgba(54, 162, 235, ${alpha})` :
+    `rgba(255, 99, 132, ${alpha})`;
 }
 
 function getLabel(el, i, data) {
@@ -25,23 +25,30 @@ export function createChart(container, data, isActive) {
     type: 'line',
     data: {
       labels: data.map(getLabel),
-      datasets: [
-        {
-          data: data,
-          borderWidth: 1,
-            borderColor: borderColor,
-              backgroundColor: backgroundColor
-        }
-      ]
+      datasets: [{
+        data: data,
+        borderWidth: 1,
+        borderColor: borderColor,
+        backgroundColor: backgroundColor
+      }]
     },
     options: {
-        legend: { 
+      legend: {
+        display: false
+      },
+      scales: {
+        xAxes: [{
+          ticks: {
             display: false
-        },
-        scales: {
-            xAxes: [{ ticks: { display: false } }],
-            yAxes: [{ ticks: { beginAtZero: true, max: 10 } }]
-        }
+          }
+        }],
+        yAxes: [{
+          ticks: {
+            beginAtZero: true,
+            max: 10
+          }
+        }]
+      }
     }
   });
 
